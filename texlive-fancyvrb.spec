@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 Flexible handling of verbatim text including: verbatim commands
@@ -30,20 +27,12 @@ environments; save and restore verbatim text and environments;
 write and read files in verbatim mode; build "example"
 environments (showing both result and verbatim source).
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -64,7 +53,6 @@ environments (showing both result and verbatim source).
 %doc %{_texmfdistdir}/source/latex/fancyvrb/fancyvrb.ins
 %doc %{_texmfdistdir}/source/latex/fancyvrb/fvrb-ex.dtx
 %doc %{_texmfdistdir}/source/latex/fancyvrb/fvrb-ex.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -75,5 +63,3 @@ environments (showing both result and verbatim source).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
