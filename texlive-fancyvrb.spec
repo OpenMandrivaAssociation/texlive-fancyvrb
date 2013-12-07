@@ -6,7 +6,7 @@
 # catalog-version 2.8
 Name:		texlive-fancyvrb
 Version:	2.8
-Release:	4
+Release:	5
 Summary:	Sophisticated verbatim text
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fancyvrb
