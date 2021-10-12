@@ -13,7 +13,6 @@ URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fancyvrb
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancyvrb.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancyvrb.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancyvrb.source.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -56,24 +55,10 @@ environments (showing both result and verbatim source).
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a0 -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.8-2
-+ Revision: 751792
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.8-1
-+ Revision: 718419
-- texlive-fancyvrb
-- texlive-fancyvrb
-- texlive-fancyvrb
-- texlive-fancyvrb
-
