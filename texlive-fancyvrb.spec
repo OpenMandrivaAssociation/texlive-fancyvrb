@@ -1,18 +1,12 @@
-# revision 18492
-# category Package
-# catalog-ctan /macros/latex/contrib/fancyvrb
-# catalog-date 2010-05-25 20:13:54 +0200
-# catalog-license lppl
-# catalog-version 2.8
 Name:		texlive-fancyvrb
-Version:	3.2a
+Version:	63496
 Release:	1
 Summary:	Sophisticated verbatim text
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fancyvrb
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancyvrb.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancyvrb.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancyvrb.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancyvrb.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,38 +21,24 @@ write and read files in verbatim mode; build "example"
 environments (showing both result and verbatim source).
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/fancyvrb/fancyvrb.sty
-%{_texmfdistdir}/tex/latex/fancyvrb/fvrb-ex.sty
-%{_texmfdistdir}/tex/latex/fancyvrb/hbaw.sty
-%{_texmfdistdir}/tex/latex/fancyvrb/hcolor.sty
-%doc %{_texmfdistdir}/doc/latex/fancyvrb/Changes
-%doc %{_texmfdistdir}/doc/latex/fancyvrb/Makefile
-%doc %{_texmfdistdir}/doc/latex/fancyvrb/README
-%doc %{_texmfdistdir}/doc/latex/fancyvrb/README.contrib
-%doc %{_texmfdistdir}/doc/latex/fancyvrb/fancyvrb.pdf
-%doc %{_texmfdistdir}/doc/latex/fancyvrb/fvrb-ex.pdf
-%doc %{_texmfdistdir}/doc/latex/fancyvrb/t-fvrbex.tex
-#- source
-%doc %{_texmfdistdir}/source/latex/fancyvrb/fancyvrb.dtx
-%doc %{_texmfdistdir}/source/latex/fancyvrb/fancyvrb.ins
-%doc %{_texmfdistdir}/source/latex/fancyvrb/fvrb-ex.dtx
-%doc %{_texmfdistdir}/source/latex/fancyvrb/fvrb-ex.ins
+%{_texmfdistdir}/tex/latex/fancyvrb
+%doc %{_texmfdistdir}/doc/latex/fancyvrb
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+cp -fpar tex doc %{buildroot}%{_texmfdistdir}
