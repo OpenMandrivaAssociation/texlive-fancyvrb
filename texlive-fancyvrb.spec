@@ -1,6 +1,6 @@
 Name:		texlive-fancyvrb
-Version:	63496
-Release:	2
+Version:	65585
+Release:	1
 Summary:	Sophisticated verbatim text
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fancyvrb
