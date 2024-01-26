@@ -1,5 +1,5 @@
 Name:		texlive-fancyvrb
-Version:	68772
+Version:	69536
 Release:	1
 Summary:	Sophisticated verbatim text
 Group:		Publishing
