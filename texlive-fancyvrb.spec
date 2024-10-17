@@ -3,7 +3,7 @@ Version:	69536
 Release:	1
 Summary:	Sophisticated verbatim text
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fancyvrb
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/fancyvrb
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancyvrb.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancyvrb.doc.r%{version}.tar.xz
